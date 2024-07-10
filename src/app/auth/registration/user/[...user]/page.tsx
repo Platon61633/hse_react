@@ -29,13 +29,12 @@ const User = ({params}:{params: paramsType}) => {
     // setTimeout(()=>SetisLoader(false), 2000)
         if (User.name && User.surname && User.university && User.fakultet) {
             
-            fetch('https://hsecond.vercel.app/api/register', {
-                method: 'POST',
+            fetch('https://hsecond.vercel.app/ping', {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'mode': 'no-cors'
-                },
-                body: JSON.stringify({...User, email: params.user[0], password: params.user[1]})
+                }
             })
             .then(e=>e.json())
             console.log({...User, email: params.user[0], password: params.user[1]})
