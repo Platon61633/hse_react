@@ -23,15 +23,15 @@ const User = ({params}:{params: paramsType}) => {
     
     
 
-    const PostReg = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+    const PostReg = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
         e.preventDefault()
         SetisLoader(true)
     // setTimeout(()=>SetisLoader(false), 2000)
         if (User.name && User.surname && User.university && User.fakultet) {
-            axios.post('https://hsecond.vercel.app/api/register', {...User, email: params.user[0], password: params.user[1]},
+            await axios.post('https://hsecond.vercel.app/api/register', {...User, email: params.user[0], password: params.user[1]},
                 {headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin': '*',
                 }}
             )
             .then(e=>console.log(e.data)
