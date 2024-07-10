@@ -28,15 +28,16 @@ const User = ({params}:{params: paramsType}) => {
         SetisLoader(true)
     // setTimeout(()=>SetisLoader(false), 2000)
         if (User.name && User.surname && User.university && User.fakultet) {
-            await axios.post('https://hsecond.vercel.app/api/register', {...User, email: params.user[0], password: params.user[1]},
-                {headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                    'Accept': '*/*'
-                }}
-            )
-            .then(e=>console.log(e.data)
-            )
+            
+            fetch('https://hsecond.vercel.app/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'mode': 'no-cors'
+                },
+                body: JSON.stringify({...User, email: params.user[0], password: params.user[1]})
+            })
+            .then(e=>e.json())
             console.log({...User, email: params.user[0], password: params.user[1]})
         }
         
