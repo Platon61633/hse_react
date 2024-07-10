@@ -29,10 +29,7 @@ const User = ({params}:{params: paramsType}) => {
     // setTimeout(()=>SetisLoader(false), 2000)
         if (User.name && User.surname && User.university && User.fakultet) {
             await axios.post('https://hsecond.vercel.app/api/register', {...User, email: params.user[0], password: params.user[1]},
-                {headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                }}
+                
             )
             .then(e=>console.log(e.data)
             )
