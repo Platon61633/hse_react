@@ -1,0 +1,58 @@
+
+.Messenger{
+    display: flex;
+}
+
+.users{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgb(116, 116, 116);
+}
+
+.chat{
+    width: 100%;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+
+.bro{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: rgb(83, 83, 223); */
+    padding: 10px 10px;
+    align-items: center;
+}
+
+.messenges{
+    background: url(../../../public/background_chat1.jpg) no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+    display: flex;
+    flex-direction: column;
+    background-color: #3d3bff;
+    align-content: space-between;
+    height: 100%;
+}
+
+.messenges div{
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.MyMesseng{
+    align-self: flex-end;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+}
+
+.BroMesseng{
+    width: min-content;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+}
